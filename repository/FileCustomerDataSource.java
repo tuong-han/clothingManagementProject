@@ -35,11 +35,11 @@ public class FileCustomerDataSource {
  
                 List<String> customerData = Arrays.asList(line.split(","));
  
-                String type = customerData.get(0).trim();
                 int customerID = Integer.parseInt(customerData.get(1).trim());
                 String customerName = customerData.get(2).trim();
                 String phone = customerData.get(3).trim();
                 String address = customerData.get(4).trim();
+                String type = customerData.get(0).trim();
  
                 customerList.add(CustomerFactory.create(type, customerID, customerName, phone, address));
             }
