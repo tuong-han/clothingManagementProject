@@ -1,0 +1,5 @@
+P01, Basic T-Shirt, T-Shirt, M, Black, 280000, 42
+P02, Jeans, Trousers, L, Blue, 550000, 20
+P03, Summer Dress, Dress, S, White, 650000, 15
+P05, Polo Shirt, Shirt, M, White, 350000, 3
+P08, Jacket, Outerwear, L, Black, 950000, 3
