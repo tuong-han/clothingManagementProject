@@ -35,6 +35,7 @@ public class Main {
     private final FileOrderDataSource fileOrderDataSource;
     private final SalesManagement salesManagement;
     private final ReportManagement reportManagement;
+    private final InventoryManagement inventoryManagement;
 
     private Main(CustomerService customerService, ProductRepository productRepository,
                  ProductService productService,
@@ -49,6 +50,7 @@ public class Main {
         this.reportService = new ReportService(orderRepository, productRepository);
         this.salesManagement = new SalesManagement(customerService, productService, orderRepository, salesService, fileOrderDataSource);
         this.reportManagement = new ReportManagement(reportService);
+        this.inventoryManagement = new InventoryManagement(
         
     }
 
