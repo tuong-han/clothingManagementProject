@@ -271,36 +271,6 @@ public class Main {
     }
 
     // 4. Inventory Management
-    private void printLowStockProducts() {
-        boolean found = false;
-        for (Product product : productService.getAllProducts()) {
-            if (product.isLowStock()) {
-                System.out.println(product);
-                found = true;
-            }
-        }
-        if (!found) {
-            System.out.println("No low-stock products.");
-        }
-    }
-
-    private void adjustProductStock() throws Exception {
-        String productId = DataInput.getString("Product ID: ").trim();
-        Optional<Product> product = productService.findById(productId);
-        if (!product.isPresent()) {
-            System.out.println("Product not found.");
-            return;
-        }
-
-        int quantity = DataInput.getIntegerNumber("New stock quantity: ");
-        product.get().setQuantity(quantity);
-        if (productService.updateProduct(product.get())) {
-            productService.saveProductsToFile();
-            System.out.println("Stock updated and saved.");
-        } else {
-            System.out.println("Could not update stock.");
-        }
-    }
 
 
     // 5. Report Management
