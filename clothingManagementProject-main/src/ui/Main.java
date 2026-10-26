@@ -50,7 +50,7 @@ public class Main {
         this.reportService = new ReportService(orderRepository, productRepository);
         this.salesManagement = new SalesManagement(customerService, productService, orderRepository, salesService, fileOrderDataSource);
         this.reportManagement = new ReportManagement(reportService);
-        this.inventoryManagement = new InventoryManagement(
+        this.inventoryManagement = new InventoryManagement(productService, products);
         
     }
 
@@ -226,10 +226,10 @@ public class Main {
                         products.printAllProducts();
                         break;
                     case 2:
-                        printLowStockProducts();
+                        inventoryManagement.printLowStockProducts();
                         break;
                     case 3:
-                        adjustProductStock();
+                        inventoryManagement.adjustProductStock();
                         break;
                     case 0:
                         return;
