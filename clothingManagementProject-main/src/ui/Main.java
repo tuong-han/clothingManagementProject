@@ -34,6 +34,7 @@ public class Main {
     private final ReportService reportService;
     private final FileOrderDataSource fileOrderDataSource;
     private final SalesManagement salesManagement;
+    private final ReportManagement reportManagement;
 
     private Main(CustomerService customerService, ProductRepository productRepository,
                  ProductService productService,
@@ -47,6 +48,8 @@ public class Main {
         this.salesService = new SalesService(productRepository, orderRepository);
         this.reportService = new ReportService(orderRepository, productRepository);
         this.salesManagement = new SalesManagement(customerService, productService, orderRepository, salesService, fileOrderDataSource);
+        this.reportManagement = new ReportManagement(reportService);
+        
     }
 
     public static void main(String[] args) {
