@@ -251,13 +251,13 @@ public class Main {
                 int choice = DataInput.getIntegerNumber("Choose: ");
                 switch (choice) {
                     case 1:
-                        monthlyRevenueReport();
+                        reportManagement.monthlyRevenueReport();
                         break;
                     case 2:
-                        printBestSellingProducts();
+                        reportManagement.printBestSellingProducts();
                         break;
                     case 3:
-                        printHighestSpendingCustomers();
+                        reportManagement.printHighestSpendingCustomers();
                         break;
                     case 0:
                         return;
