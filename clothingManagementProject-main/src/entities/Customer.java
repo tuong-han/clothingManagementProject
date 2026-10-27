@@ -9,9 +9,9 @@ package entities;
  */
 public abstract class Customer {
        private int customerID;
-    private String customerName;
-    private String address;
-    private String phone;
+       setCustomerName(customerName);
+       setAddress(address);
+       setPhone(phone);
  
     public Customer() {
     }
@@ -36,7 +36,10 @@ public abstract class Customer {
     }
  
     public void setCustomerName(String customerName) {
-        this.customerName = customerName;
+        if (customerName == null || customerName.trim().isEmpty()) {
+        throw new IllegalArgumentException("Customer name must not be empty.");
+    }
+    this.customerName = customerName.trim();
     }
  
     public String getAddress() {
@@ -44,8 +47,11 @@ public abstract class Customer {
     }
  
     public void setAddress(String address) {
-        this.address = address;
+    if (address == null || address.trim().isEmpty()) {
+        throw new IllegalArgumentException("Address must not be empty.");
     }
+    this.address = address.trim();
+}
  
     public String getPhone() {
         return phone;
