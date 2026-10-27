@@ -129,9 +129,9 @@ private final CustomerService customerService;
             Customer customer = optional.get();
  
             // Nhấn Enter để giữ giá trị cũ
-            String customerName = DataInput.getString("Enter customer name: ");
-            if (Datavalidation.checkStringEmpty(customerName)) {
-                customer.setCustomerName(customerName);
+            String customerName = DataInput.getString("Enter customer name: ").trim();
+            if (DataValidation.checkStringEmpty(customerName)) {   
+            customer.setCustomerName(customerName);
             }
             String address = DataInput.getString("Enter address: ");
             if (Datavalidation.checkStringEmpty(address)) {
