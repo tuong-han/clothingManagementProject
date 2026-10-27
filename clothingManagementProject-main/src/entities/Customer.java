@@ -9,18 +9,17 @@ package entities;
  */
 public abstract class Customer {
        private int customerID;
-       setCustomerName(customerName);
-       setAddress(address);
-       setPhone(phone);
+       private String customerName;
+       private String address;
  
     public Customer() {
     }
  
     public Customer(int customerID, String customerName, String phone, String address) {
         this.customerID = customerID;
-        this.customerName = customerName;
+        setCustomerName(customerName);;
         setPhone(phone);              
-        this.address = address;
+        setAddress(address);
     }
  
     public int getCustomerID() {
@@ -71,7 +70,7 @@ public abstract class Customer {
  
    public String toCSV() {
         return String.format("%s,%d,%s,%s,%s",
-                getType(), customerID, customerName, phone, address);
+                 customerID, customerName, phone, address,getType());
     }
  
     @Override
