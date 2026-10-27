@@ -11,6 +11,7 @@ public abstract class Customer {
        private int customerID;
        private String customerName;
        private String address;
+       private String phone;
  
     public Customer() {
     }
@@ -69,7 +70,7 @@ public abstract class Customer {
 }
  
    public String toCSV() {
-        return String.format("%s,%d,%s,%s,%s",
+        return String.format("%d,%s,%s,%s,%s,%s",
                  customerID, customerName, phone, address,getType());
     }
  
