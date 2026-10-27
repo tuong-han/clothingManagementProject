@@ -57,6 +57,15 @@ private final CustomerService customerService;
             System.out.println("Type must be Regular or VIP. Try again.");
         }
     }
+ private String inputRequired(String message, String fieldName) {
+    while (true) {
+        String value = DataInput.getString(message).trim();
+        if (!value.isEmpty()) {
+            return value;
+        }
+        System.out.println(fieldName + " must not be empty. Try again.");
+    }
+}
     //---------------------------------------------------
  
     public void printCustomerListFromFile() throws Exception {
@@ -78,8 +87,8 @@ private final CustomerService customerService;
     public void addCustomer() {
         try {
             int customerID = DataInput.getIntegerNumber("Enter customer ID: ");
-            String customerName = DataInput.getString("Enter customer name: ");
-            String address = DataInput.getString("Enter address: ");
+            String customerName = inputRequired("Enter customer name: ", "Name");
+            String address= inputRequired("Enter address: ", "Address");
             String phone = inputPhone("Enter phone: ");
             String type = inputType("Enter type (Regular/VIP): ");
  
