@@ -44,7 +44,7 @@ private final CustomerService customerService;
             if (Customer.isValidPhone(phone)) {
                 return phone;
             }
-            System.out.println("Phone invalid (10 digits, start with 03x/05x/07x/08x/09x). Try again.");
+            System.out.println("Phone invalid (10 digits, start with 0 or +84. Try again.");
         }
     }
  
@@ -130,7 +130,7 @@ private final CustomerService customerService;
  
             // Nhấn Enter để giữ giá trị cũ
             String customerName = DataInput.getString("Enter customer name: ").trim();
-            if (DataValidation.checkStringEmpty(customerName)) {   
+            if (Datavalidation.checkStringEmpty(customerName)) {   
             customer.setCustomerName(customerName);
             }
             String address = DataInput.getString("Enter address: ");
