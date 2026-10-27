@@ -70,7 +70,7 @@ public abstract class Customer {
 }
  
    public String toCSV() {
-        return String.format("%d,%s,%s,%s,%s,%s",
+        return String.format("%d,%s,%s,%s,%s",
                  customerID, customerName, phone, address,getType());
     }
  
