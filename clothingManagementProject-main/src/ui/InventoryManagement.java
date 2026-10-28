@@ -45,3 +45,4 @@ public class InventoryManagement {
             System.out.println("Could not update stock.");
         }
     }
+}
