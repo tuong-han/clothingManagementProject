@@ -1,0 +1,61 @@
+package util;
+
+/**
+ *
+ * @author Thanh Dat
+ */
+public final class Datavalidation {
+      public static boolean checkNumberInMinMax(int number,int min, int max){
+         boolean result = true;
+         if(number < min || number > max){
+             result = false;                     
+         }
+         return result;
+    }
+    //------------------------------------------------------
+    public static boolean checkStringEmpty(String value) {
+        boolean result = true;
+         if(value.isEmpty()){
+             result = false;                     
+         }
+         return result;        
+    }
+    //------------------------------------------------------
+    public static boolean checkStringLengthInRange(String value, int min, int max) {
+        boolean result = true;
+        int length;
+        if (!checkStringEmpty(value)) {
+            result = false;
+        } else {
+            length = value.length();
+            if (length < min || length > max) {
+                result = false;
+            }
+        }
+        return result;
+    }
+     //------------------------------------------------------
+     public static boolean checkStringWithFormat(String value,String pattern){
+         boolean result = false;
+         if(value.matches(pattern)){
+             result = true;                     
+         }
+         return result;
+    }
+     
+     
+    // Kiểm tra chuỗi rỗng
+    public static boolean isEmpty(String str) {
+        return str == null || str.trim().isEmpty();
+    }
+
+    // Kiểm tra giá sản phẩm (> 0)
+    public static boolean isValidPrice(double price) {
+        return price > 0;
+    }
+
+    // Kiểm tra số lượng tồn kho (>= 0)
+    public static boolean isValidQuantity(int quantity) {
+        return quantity >= 0;
+    }
+}
